@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function datos_texto(mensaje){
+            var texto=prompt(mensaje,"")
+            return texto
+        }
+        function datos_numero(mensaje){
+            do {
+                var numeros_valor=prompt(mensaje,"")
+                var numero=parseInt(numeros_valor)
+                if (isNaN(numero)){
+                    alert("Error!!! escribe un valor numerico")
+                }     
+            } while (isNaN(numero))
+            return numero
+        }
+        var cantidad_participantes=confirm("quiere ingresar un participante?")  
+        var participantes=[]
+        
+
+
+        for (var control=0; cantidad_participantes==true; control++){
+            participantes.push({
+            nombre: datos_texto("ingrese su nombre"),
+            edad:datos_numero("ingrese su edad"),
+            sexo: datos_texto("Coloque F si es femenino o M si es masculino"),
+            puntuacion:datos_numero("ingrese su puntuacion")},
+            )
+            cantidad_participantes=confirm("quiere ingresar otro participante?")
+            console.log(participantes)
+        }
+        alert("Cantidad de participantes: " + participantes.length)
+        
+        var menores_edad=0
+         for (var a=0; a<participantes.length; a++){
+             if (participantes[a].edad<18){
+                 menores_edad=menores_edad+1
+             }
+            }console.log(menores_edad)
+        alert("Cantidad menores de edad: " + menores_edad)
+
+        var cantidad_mujeres=0
+         for (var a=0; a<participantes.length; a++){
+             if (participantes[a].sexo=="f"){
+                 cantidad_mujeres=cantidad_mujeres+1
+             }
+            }console.log(cantidad_mujeres)
+        alert("Cantidad de participantes mujeres: " + cantidad_mujeres)
+
+        var cantidad_hombres=0
+         for (var a=0; a<participantes.length; a++){
+             if (participantes[a].sexo=="m"){
+                 cantidad_hombres=cantidad_hombres+1
+             }
+            }console.log(cantidad_hombres)
+        alert("Cantidad de participantes hombres: " + cantidad_hombres)
+        //como acceder a la putuacion maxima :(
+        /*
+        var=nombre_ganadores=[]
+        var puntuacion_maxima=participantes[0].puntuacion 
+        
+        for ( var a=0; a<participantes.length; a++){
+            if (puntuacion_maxima<participantes[a].puntuacion){
+                puntuacion_maxima=participantes[a].puntuacion
+                nombre_ganadores.participantes[a].nombres
+            }
+        
+            console.log(puntuacion_maxima)
+        } 
+        */
+
+    </script>
+    
+</body>
+</html>
