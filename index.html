@@ -37,7 +37,7 @@
         }
         alert("Cantidad de participantes: " + participantes.length)
         
-        /* participantes ganadores */
+        /* participantes con mejor puntuacion */
         var puntuacion_maxima=participantes[0].puntuacion 
         for ( var a=0; a<participantes.length; a++){
             if (puntuacion_maxima<participantes[a].puntuacion){
@@ -78,6 +78,39 @@
              }
             }console.log(cantidad_hombres)
         alert("Cantidad de participantes hombres: " + cantidad_hombres)
+        var mayor_edad=participantes[0].edad
+        for ( var a=0; a<participantes.length; a++){
+            if (mayor_edad<participantes[a].edad){
+                mayor_edad=participantes[a].edad
+            }
+            console.log(mayor_edad)
+        }
+        var nombre_mayor_edad=""
+        for (a=0;a<participantes.length; a++){
+            if (mayor_edad==participantes[a].edad){
+                nombre_mayor_edad=participantes[a].nombre
+            }
+            console.log(nombre_mayor_edad)
+        }
+        alert("participante con mayor edad: "+ nombre_mayor_edad)
+
+        /* participantes con peor puntuacion */
+        var puntuacion_minima=participantes[0].puntuacion 
+        for ( var a=0; a<participantes.length; a++){
+            if (puntuacion_minima>participantes[a].puntuacion){
+                puntuacion_minima=participantes[a].puntuacion
+            }
+        
+            console.log(puntuacion_minima)
+        }
+        var nombres_menor_puntuacion=[]
+        for (a=0;a<participantes.length; a++){
+            if (puntuacion_minima==participantes[a].puntuacion){
+                nombres_menor_puntuacion.push(participantes[a].nombre)
+            }
+            console.log(nombres_menor_puntuacion)
+        }
+        alert("participantes con peor puntuacion: "+ nombres_menor_puntuacion)
         //como acceder a la putuacion maxima :(
         /*
         var=nombre_ganadores=[]
