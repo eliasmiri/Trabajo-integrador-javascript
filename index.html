@@ -37,6 +37,24 @@
         }
         alert("Cantidad de participantes: " + participantes.length)
         
+        /* participantes ganadores */
+        var puntuacion_maxima=participantes[0].puntuacion 
+        for ( var a=0; a<participantes.length; a++){
+            if (puntuacion_maxima<participantes[a].puntuacion){
+                puntuacion_maxima=participantes[a].puntuacion
+            }
+        
+            console.log(puntuacion_maxima)
+        }
+        var nombres_ganadores=[]
+        for (a=0;a<participantes.length; a++){
+            if (puntuacion_maxima==participantes[a].puntuacion){
+                nombres_ganadores.push(participantes[a].nombre)
+            }
+            console.log(nombres_ganadores)
+        }
+        alert("participantes con mejor puntuacion: "+ nombres_ganadores)
+        
         var menores_edad=0
          for (var a=0; a<participantes.length; a++){
              if (participantes[a].edad<18){
